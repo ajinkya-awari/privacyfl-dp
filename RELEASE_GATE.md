@@ -41,7 +41,7 @@ The following remain blocked:
 Exclude:
 
 - Internal assistant/tooling directories and project-control instruction files.
-- Prompt files, internal handover records, tool logs, and conversational transcripts.
+- Prompt files, internal handover records, internal logs, and conversational records.
 - NIH data, patient data, model weights, checkpoints, datasets, generated figures, credentials, environment files, and private paths.
 - Internal collaboration residue.
 
