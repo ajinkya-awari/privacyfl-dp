@@ -1,10 +1,26 @@
-# PrivacyFL-DP
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=180&section=header&text=PrivacyFL-DP&fontSize=44&fontColor=fff&animation=twinkling&fontAlignY=38&desc=Federated%20Learning%20%2B%20Differential%20Privacy%20on%20NIH%20ChestX-ray14&descAlignY=58&descAlign=50&descSize=15"/>
+
+[![Tests](https://img.shields.io/badge/tests-23%20passing-brightgreen)](tests/)
+[![License: see repo](https://img.shields.io/badge/license-see%20LICENSE-lightgrey)](LICENSE)
+[![Status](https://img.shields.io/badge/status-real%20execution%20in%20progress-orange)](docs/STATUS.md)
+[![GitHub](https://img.shields.io/badge/GitHub-ajinkya--awari%2Fprivacyfl--dp-181717?logo=github)](https://github.com/ajinkya-awari/privacyfl-dp)
+
+</div>
 
 PrivacyFL-DP is a federated learning and differential privacy research prototype on the NIH
 ChestX-ray14 dataset. The local synthetic contract layer is complete. Real execution against the
 real dataset is now in progress: one of six planned privacy operating points has a measured
 result; the remaining five are not yet run. This repository contains no raw patient data, model
 weights, or checkpoints — only code, tests, and disclosure-safe aggregate evidence.
+
+> **Research artifact.** This is a bounded research prototype, not a clinical, production, or
+> deployment-ready system. No clinical validation, diagnostic accuracy, or regulatory claim is
+> made or implied anywhere in this repository.
+
+Governance and process documentation (release gates, test checklists, evidence ledger) lives in
+[`docs/`](docs/) to keep this README focused on the project itself.
 
 ## Current Status (updated 2026-10-24)
 
