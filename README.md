@@ -1,16 +1,47 @@
 # PrivacyFL-DP
 
-PrivacyFL-DP is a bounded research prototype for checking the local contracts around a future federated learning and differential privacy study. The current project is complete only for the local synthetic scope. It does not contain real NIH ChestX-ray14 data, model weights, training output, measured epsilon, measured AUC, or clinical evidence.
+PrivacyFL-DP is a federated learning and differential privacy research prototype on the NIH
+ChestX-ray14 dataset. The local synthetic contract layer is complete. Real execution against the
+real dataset is now in progress: one of six planned privacy operating points has a measured
+result; the remaining five are not yet run. This repository contains no raw patient data, model
+weights, or checkpoints — only code, tests, and disclosure-safe aggregate evidence.
 
-## Current Status
+## Current Status (updated 2026-10-24)
 
 - Synthetic/local scope: complete with limitations.
-- Project status: complete with limitations.
-- Research execution: not released.
-- Real NIH/federated results: not verified.
-- Latest local test evidence: `python -m pytest tests -q` reported `23 passed in 0.15s`.
-- Notebook status: `12` cells, `9` code cells, `0` executed code cells.
-- Synthetic evidence status: `measured_epsilon` and `measured_auc` are `null`.
+- **Real execution: in progress.** 1 of 6 planned operating points (`epsilon = 0.1`) has a
+  measured result (see "Real Execution Evidence" below). The remaining operating points
+  (`0.5, 1.0, 5.0, 10.0, inf`) are not yet executed.
+- This is ongoing work; the author expects the remaining operating points to take several more
+  weeks of federated-learning GPU runs to complete.
+- Latest local test evidence: `python -m pytest tests -q` reported `23 passed`.
+- Synthetic evidence status: `measured_epsilon` and `measured_auc` are `null` (synthetic layer only;
+  see the real evidence file for the actual measured result).
+
+## Real Execution Evidence
+
+Real training was run on the actual NIH ChestX-ray14 dataset (112,120 images, 5 federated clients,
+official train/test split) with Opacus differential privacy. One operating point is measured so far:
+
+| epsilon (target) | epsilon (actual, measured) | macro-AUC (measured) |
+|---|---|---|
+| 0.1 | 0.0962 | 0.497 |
+
+Full machine-readable record: [`evidence/real_run_label_0.1.json`](evidence/real_run_label_0.1.json).
+
+**Honest interpretation — read before citing this number anywhere:**
+- A macro-AUC of ~0.497 on a 14-class task is statistically indistinguishable from chance. This is
+  an honest result from a small custom CNN trained for only 30 total epochs under strong
+  differential-privacy noise — it is **not** evidence that the model "works," and is not described
+  as such anywhere in this repository.
+- The actual epsilon was composed across multiple training sessions using a checkpoint/resume
+  mechanism (training was interrupted and resumed using Kaggle's free GPU quota, which resets
+  weekly). This composition method has not yet been independently cross-checked against an
+  equivalent single, uninterrupted training run. Treat this result as **measured, not yet fully
+  reviewed**.
+- This is not a clinical validation and not a formal, audited privacy guarantee beyond the stated
+  mechanism (per-sample gradient clipping with Gaussian noise, RDP accounting, honest-but-curious
+  threat model only).
 
 ## Purpose
 

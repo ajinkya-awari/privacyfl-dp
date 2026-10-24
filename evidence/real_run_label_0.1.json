@@ -1,0 +1,61 @@
+{
+  "client_count": 5,
+  "dataset_profile": {
+    "root": "/kaggle/input/datasets/nih-chest-xrays/data",
+    "source": "NIH ChestX-ray14"
+  },
+  "fl_rounds": 10,
+  "label_vocab": [
+    "Atelectasis",
+    "Cardiomegaly",
+    "Consolidation",
+    "Edema",
+    "Effusion",
+    "Emphysema",
+    "Fibrosis",
+    "Hernia",
+    "Infiltration",
+    "Mass",
+    "Nodule",
+    "Pleural_Thickening",
+    "Pneumonia",
+    "Pneumothorax"
+  ],
+  "local_epochs": 3,
+  "project": "PrivacyFL-DP",
+  "results": [
+    {
+      "accountant_state": {
+        "accountant": "opacus-rdp",
+        "per_client_epsilon": [
+          0.09623527664755982,
+          0.09596138107313053,
+          0.0960326909147034,
+          0.09059290442284242,
+          0.09316901245972205
+        ],
+        "resumed_from_checkpoint": true
+      },
+      "actual_epsilon": 0.09623527664755982,
+      "label": "0.1",
+      "macro_auc": 0.4974035533606679,
+      "resumed_from_checkpoint": true,
+      "single_class_columns": [],
+      "target_epsilon": 0.1,
+      "unsupported_reason": null
+    }
+  ],
+  "run_labels_this_execution": [
+    "0.1"
+  ],
+  "run_timestamp_utc": "2026-10-03T09:09:14.508215+00:00",
+  "scope": "real NIH ChestX-ray14 federated run",
+  "seed": 17,
+  "status": "measured",
+  "total_epochs": 30,
+  "warnings": [
+    "Not a clinical validation. Not a formal privacy audit beyond the declared mechanism.",
+    "Honest-but-curious threat model only; no secure aggregation or malicious-client robustness claimed.",
+    "Any result with resumed_from_checkpoint=true composed its epsilon by manually seeding the Opacus RDP accountant history across kernel runs; cross-check against an equivalent from-scratch run before treating it as fully reviewed evidence."
+  ]
+}

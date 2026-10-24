@@ -1,5 +1,18 @@
 # STATUS - PrivacyFL-DP
 
+## Real Execution In Progress - 2026-10-24
+
+**Current status:** `REAL EXECUTION IN PROGRESS — 1 OF 6 OPERATING POINTS MEASURED`.
+**Measured so far:** `epsilon=0.1` → actual epsilon `0.0962`, macro-AUC `0.497` (near-chance; honest,
+not inflated). See `evidence/real_run_label_0.1.json`.
+**Remaining:** operating points `0.5, 1.0, 5.0, 10.0, inf` are not yet executed; expected to take
+several more weeks of federated GPU training (Kaggle's free weekly GPU quota is the limiting factor).
+**Caveat:** the measured epsilon above was composed across multiple interrupted/resumed training
+sessions and has not yet been cross-checked against a single uninterrupted run — treat as
+measured, not yet fully reviewed.
+**Research execution:** in progress (previously "not released"; the local synthetic/contract scope
+below remains historically accurate for that earlier phase).
+
 ## Current Status - 2026-09-15
 
 **Current status:** `LOCAL-SYNTHETIC-IMPLEMENTATION-COMPLETE WITH LIMITATIONS`.
